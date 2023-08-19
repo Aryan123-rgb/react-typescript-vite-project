@@ -34,6 +34,7 @@ function SecondPage() {
     if(!userDetails){
       setUserDetailsPresent(false);
     }
+    else setUserDetailsPresent(true);
   }
 
   useEffect(() => {
@@ -43,15 +44,17 @@ function SecondPage() {
 
 
   if(userDetailsPresent === false){
-    navigate('/');
     alert('Enter your details first');
+    setTimeout(() => {
+      navigate('/');
+    }, 1000);
   }
 
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 120 },
     { field: "userId", headerName: "UserID", width: 120 },
     { field: "title", headerName: "Title", width: 500 },
-    { field: "body", headerName: "Body", width: 850 },
+    { field: "body", headerName: "Body", width: 990 },
   ];
 
   return (
