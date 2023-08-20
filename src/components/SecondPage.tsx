@@ -29,7 +29,7 @@ function SecondPage() {
     }
   };
 
-  // const checkUserDetailsPresent = () => {
+  // const checkUserDetailsPresent = () => 
   //   const userDetails = localStorage.getItem('userDetails');
   //   console.log(userDetails);
   //   if(!userDetails){
