@@ -10,32 +10,32 @@ function SecondPage() {
     title: string;
     body: string;
   }
-  // const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  // const fetchPosts = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       "https://jsonplaceholder.typicode.com/posts"
-  //     );
-  //     const data: Post[] = await response.json();
-  //     console.log(data);
-  //     setPosts(data);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //     throw error;
-  //   }
-  // };
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      const data: Post[] = await response.json();
+      console.log(data);
+      setPosts(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error;
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchPosts();
-  // }, []);
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
-  // const columns: GridColDef[] = [
-  //   { field: "id", headerName: "ID", width: 120 },
-  //   { field: "userId", headerName: "UserID", width: 120 },
-  //   { field: "title", headerName: "Title", width: 500 },
-  //   { field: "body", headerName: "Body", width: 990 },
-  // ];
+  const columns: GridColDef[] = [
+    { field: "id", headerName: "ID", width: 120 },
+    { field: "userId", headerName: "UserID", width: 120 },
+    { field: "title", headerName: "Title", width: 500 },
+    { field: "body", headerName: "Body", width: 700 },
+  ];
 
   return (
     <>
@@ -43,7 +43,7 @@ function SecondPage() {
       <Typography variant="h4" style={{ marginBottom: "16px", color: "#333" }}>
           Posts
         </Typography>
-        {/* <DataGrid rows={posts} columns={columns} /> */}
+        <DataGrid rows={posts} columns={columns} />
       </div>
       <div style={{ width:"80%",margin:"8rem auto",fontSize:"1.5rem" }}>
         <DepartmentList />
