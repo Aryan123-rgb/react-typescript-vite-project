@@ -9,7 +9,6 @@ export default function App() {
         <Route path="/" element={<FirstPage />} />
         <Route path="/second" element={<SecondPage />} />
       </Routes>
-      {/* <FirstPage/> */}
     </>
   );
 }

@@ -29,26 +29,24 @@ function SecondPage() {
     }
   };
 
-  const checkUserDetailsPresent = () => {
-    const userDetails = localStorage.getItem('userDetails');
-    if(!userDetails){
-      setUserDetailsPresent(false);
-    }
-    else setUserDetailsPresent(true);
-  }
+  // const checkUserDetailsPresent = () => {
+  //   const userDetails = localStorage.getItem('userDetails');
+  //   console.log(userDetails);
+  //   if(!userDetails){
+  //     setUserDetailsPresent(false);
+  //   }
+  //   else setUserDetailsPresent(true);
+  // }
 
   useEffect(() => {
     fetchPosts();
-    checkUserDetailsPresent();
+    // checkUserDetailsPresent();
   }, []);
 
 
-  if(userDetailsPresent === false){
-    alert('Enter your details first');
-    setTimeout(() => {
-      navigate('/');
-    }, 1000);
-  }
+  // if(userDetailsPresent === false){
+  //   navigate('/');
+  // }
 
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID", width: 120 },

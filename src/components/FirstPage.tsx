@@ -21,7 +21,6 @@ export default function FirstPage() {
     };
 
     localStorage.setItem("userDetails", JSON.stringify(userDetails));
-    console.log("Details saved:", userDetails);
     navigate('/second');
   };
   return (
